@@ -200,10 +200,10 @@ public class conversaoDeTemperaturas {
                 default -> System.out.println("Opção inválida, tente novamente.");
             }
         }catch (Exception e){
-            System.out.println("Algo de errado não está certo! Tentar novamente!");
+            System.out.println("Eita, aconteceu algum erro! Tente novamente!");
         }
         finally {
-            System.out.println("Finalizando o programa...");
+            System.out.println("Finalizando o programa!");
         }
 
 
