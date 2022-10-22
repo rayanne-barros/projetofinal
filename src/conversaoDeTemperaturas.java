@@ -86,8 +86,8 @@ public class conversaoDeTemperaturas {
                     }
                     mediaAntiga = somatorioDasTemperaturas(temperaturas) / quantidade;
                     mediaNova = somatorioDasTemperaturas(temperaturasNovas) / quantidade;
-                    System.out.println("A média das temperaturas em Celsius é: " + mediaAntiga);
-                    System.out.println("A média das temperaturas em Kelvin é: " + mediaNova);
+                    System.out.println("A média das temperaturas em Celsius é: " + mediaAntiga+"°C");
+                    System.out.println("A média das temperaturas em Kelvin é: " + mediaNova + "K");
                 }
                 case 2 -> {
                     for (int i = 0; i < quantidade; i++) {
@@ -100,8 +100,8 @@ public class conversaoDeTemperaturas {
                     }
                     mediaAntiga = somatorioDasTemperaturas(temperaturas) / quantidade;
                     mediaNova = somatorioDasTemperaturas(temperaturasNovas) / quantidade;
-                    System.out.println("A média das temperaturas em Celsius é: " + mediaAntiga);
-                    System.out.println("A média das temperaturas em Fahrenheit é: " + mediaNova);
+                    System.out.println("A média das temperaturas em Celsius é: " + mediaAntiga+"°C");
+                    System.out.println("A média das temperaturas em Fahrenheit é: " + mediaNova+"°F");
                 }
                 case 3 -> {
                     for (int i = 0; i < quantidade; i++) {
@@ -168,7 +168,7 @@ public class conversaoDeTemperaturas {
                     }
                     media = somatorioDasTemperaturas(temperaturas) / quantidade;
                     mediaNova = somatorioDasTemperaturas(temperaturasNovas) / quantidade;
-                    System.out.println("A média das temperaturas é: " + media);
+                    System.out.println("A média das temperaturas é: " + media+"°C");
 
                 }
                 case 8 -> {
@@ -181,7 +181,7 @@ public class conversaoDeTemperaturas {
                         System.out.println("Como a conversão da temperatura é para mesma unidade sua é temperatura " + temperaturas[i] + "°F");
                     }
                     media = somatorioDasTemperaturas(temperaturas) / quantidade;
-                    System.out.println("A média das temperaturas é: " + media);
+                    System.out.println("A média das temperaturas é: " + media+"°F");
 
                 }
                 case 9 -> {
@@ -194,7 +194,7 @@ public class conversaoDeTemperaturas {
                         System.out.println("Como a conversão da temperatura é para mesma unidade sua é temperatura " + temperaturas[i] + "K");
                     }
                     media = somatorioDasTemperaturas(temperaturas) / quantidade;
-                    System.out.println("A média das temperaturas é: " + media);
+                    System.out.println("A média das temperaturas é: " + media+"K");
 
                 }
                 default -> System.out.println("Opção inválida, tente novamente.");
