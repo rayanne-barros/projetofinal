@@ -60,7 +60,7 @@ public class conversaoDeTemperaturas {
 
     public static void main(String[] args) {
         Scanner conversao = new Scanner(System.in);
-        System.out.println("Digite a conversão que você quer fazer: \n 1 - Celsius Para Kelvin;\n 2 - Celsius para Fahrenheit;\n 3 - Fahrenheit para Celsius;\n 4 - Fahrenheit para Kelvin;\n 5 - Kelvin para Celsius;\n 6 - Kelvin para Fahrenheit; ");
+        System.out.println("Digite a conversão que você quer fazer: \n 1 - Celsius Para Kelvin;\n 2 - Celsius para Fahrenheit;\n 3 - Fahrenheit para Celsius;\n 4 - Fahrenheit para Kelvin;\n 5 - Kelvin para Celsius;\n 6 - Kelvin para Fahrenheit;\n 7 - Celsius para Celsius;\n 8 -Fahrenheit para Fahrenheit\n 9 - Kelvin para Kelvin;");
         System.out.print("Digite o número da conversão desejada: ");
         int opcao = conversao.nextInt();
         int quantidade;
@@ -73,89 +73,139 @@ public class conversaoDeTemperaturas {
         temperaturasNovas = new double[quantidade];
         double mediaAntiga;
         double mediaNova;
-        switch (opcao) {
-            case 1 -> {
-                for (int i = 0; i < quantidade; i++) {
-                    System.out.print("Digite a temperatura " + (i + 1) + " : ");
-                    temperaturas[i] = conversao.nextDouble();
-                    converteTemperatura = celsiusParaKelvin(temperaturas[i]);
-                    temperaturasNovas[i] = converteTemperatura;
-                    System.out.println("A temperatura de " + temperaturas[i] + "°C transformada para Kelvin é : " + converteTemperatura + "K");
+        double media;
+        try {
+            switch (opcao) {
+                case 1 -> {
+                    for (int i = 0; i < quantidade; i++) {
+                        System.out.print("Digite a temperatura " + (i + 1) + " : ");
+                        temperaturas[i] = conversao.nextDouble();
+                        converteTemperatura = celsiusParaKelvin(temperaturas[i]);
+                        temperaturasNovas[i] = converteTemperatura;
+                        System.out.println("A temperatura de " + temperaturas[i] + "°C transformada para Kelvin é : " + converteTemperatura + "K");
+                    }
+                    mediaAntiga = somatorioDasTemperaturas(temperaturas) / quantidade;
+                    mediaNova = somatorioDasTemperaturas(temperaturasNovas) / quantidade;
+                    System.out.println("A média das temperaturas em Celsius é: " + mediaAntiga);
+                    System.out.println("A média das temperaturas em Kelvin é: " + mediaNova);
                 }
-                mediaAntiga = somatorioDasTemperaturas(temperaturas)/quantidade;
-                mediaNova = somatorioDasTemperaturas(temperaturasNovas)/quantidade;
-                System.out.println("A média das temperaturas em Celsius é: "+mediaAntiga);
-                System.out.println("A média das temperaturas em Kelvin é: "+mediaNova);
-            }
-            case 2 -> {
-                for (int i = 0; i < quantidade; i++) {
-                    System.out.print("Digite a temperatura " + (i + 1) + " : ");;
-                    temperaturas[i] = conversao.nextDouble();
-                    converteTemperatura = celsiusParaFahrenheit(temperaturas[i]);
-                    temperaturasNovas[i] = converteTemperatura;
-                    System.out.println("A temperatura de " + temperaturas[i] + "°C transformada para Fahrenheit é : " + converteTemperatura + "°F");
+                case 2 -> {
+                    for (int i = 0; i < quantidade; i++) {
+                        System.out.print("Digite a temperatura " + (i + 1) + " : ");
+                        ;
+                        temperaturas[i] = conversao.nextDouble();
+                        converteTemperatura = celsiusParaFahrenheit(temperaturas[i]);
+                        temperaturasNovas[i] = converteTemperatura;
+                        System.out.println("A temperatura de " + temperaturas[i] + "°C transformada para Fahrenheit é : " + converteTemperatura + "°F");
+                    }
+                    mediaAntiga = somatorioDasTemperaturas(temperaturas) / quantidade;
+                    mediaNova = somatorioDasTemperaturas(temperaturasNovas) / quantidade;
+                    System.out.println("A média das temperaturas em Celsius é: " + mediaAntiga);
+                    System.out.println("A média das temperaturas em Fahrenheit é: " + mediaNova);
                 }
-                mediaAntiga = somatorioDasTemperaturas(temperaturas)/quantidade;
-                mediaNova = somatorioDasTemperaturas(temperaturasNovas)/quantidade;
-                System.out.println("A média das temperaturas em Celsius é: "+mediaAntiga);
-                System.out.println("A média das temperaturas em Fahrenheit é: "+mediaNova);
-            }
-            case 3 -> {
-                for (int i = 0; i < quantidade; i++) {
-                    System.out.print("Digite a temperatura " + (i + 1) + " : ");
-                    temperaturas[i] = conversao.nextDouble();
-                    converteTemperatura = fahrenheitParaCelsius(temperaturas[i]);
-                    temperaturasNovas[i] = converteTemperatura;
-                    System.out.println("A temperatura de " + temperaturas[i] + "°F transformada para Celsius é : " + converteTemperatura + "°C");
+                case 3 -> {
+                    for (int i = 0; i < quantidade; i++) {
+                        System.out.print("Digite a temperatura " + (i + 1) + " : ");
+                        temperaturas[i] = conversao.nextDouble();
+                        converteTemperatura = fahrenheitParaCelsius(temperaturas[i]);
+                        temperaturasNovas[i] = converteTemperatura;
+                        System.out.println("A temperatura de " + temperaturas[i] + "°F transformada para Celsius é : " + converteTemperatura + "°C");
+                    }
+                    mediaAntiga = somatorioDasTemperaturas(temperaturas) / quantidade;
+                    mediaNova = somatorioDasTemperaturas(temperaturasNovas) / quantidade;
+                    System.out.println("A média das temperaturas em Fahrenheit é: " + mediaAntiga);
+                    System.out.println("A média das temperaturas em Celsius é: " + mediaNova);
                 }
-                mediaAntiga = somatorioDasTemperaturas(temperaturas)/quantidade;
-                mediaNova = somatorioDasTemperaturas(temperaturasNovas)/quantidade;
-                System.out.println("A média das temperaturas em Fahrenheit é: "+mediaAntiga);
-                System.out.println("A média das temperaturas em Celsius é: "+mediaNova);
-            }
-            case 4 -> {
-                for (int i = 0; i < quantidade; i++) {
-                    System.out.print("Digite a temperatura " + (i + 1) + " : ");
-                    temperaturas[i] = conversao.nextDouble();
-                    converteTemperatura = fahrenheitParaKelvin(temperaturas[i]);
-                    temperaturasNovas[i] = converteTemperatura;
-                    System.out.println("A temperatura de " + temperaturas[i] + "°F transformada para kelvin é : " + converteTemperatura + "K");
+                case 4 -> {
+                    for (int i = 0; i < quantidade; i++) {
+                        System.out.print("Digite a temperatura " + (i + 1) + " : ");
+                        temperaturas[i] = conversao.nextDouble();
+                        converteTemperatura = fahrenheitParaKelvin(temperaturas[i]);
+                        temperaturasNovas[i] = converteTemperatura;
+                        System.out.println("A temperatura de " + temperaturas[i] + "°F transformada para kelvin é : " + converteTemperatura + "K");
+                    }
+                    mediaAntiga = somatorioDasTemperaturas(temperaturas) / quantidade;
+                    mediaNova = somatorioDasTemperaturas(temperaturasNovas) / quantidade;
+                    System.out.println("A média das temperaturas em Fahrenheit é: " + mediaAntiga);
+                    System.out.println("A média das temperaturas em Kelvin é: " + mediaNova);
                 }
-                mediaAntiga = somatorioDasTemperaturas(temperaturas)/quantidade;
-                mediaNova = somatorioDasTemperaturas(temperaturasNovas)/quantidade;
-                System.out.println("A média das temperaturas em Fahrenheit é: "+mediaAntiga);
-                System.out.println("A média das temperaturas em Kelvin é: "+mediaNova);
-            }
-            case 5 -> {
-                for (int i = 0; i < quantidade; i++) {
-                    System.out.print("Digite a temperatura " + (i + 1) + " : ");
-                    temperaturas[i] = conversao.nextDouble();
-                    converteTemperatura = kelvinParaCelsius(temperaturas[i]);
-                    temperaturasNovas[i] = converteTemperatura;
-                    System.out.println("A temperatura de " + temperaturas[i] + "K transformada para Celsius é : " + converteTemperatura + "°C");
+                case 5 -> {
+                    for (int i = 0; i < quantidade; i++) {
+                        System.out.print("Digite a temperatura " + (i + 1) + " : ");
+                        temperaturas[i] = conversao.nextDouble();
+                        converteTemperatura = kelvinParaCelsius(temperaturas[i]);
+                        temperaturasNovas[i] = converteTemperatura;
+                        System.out.println("A temperatura de " + temperaturas[i] + "K transformada para Celsius é : " + converteTemperatura + "°C");
+                    }
+                    mediaAntiga = somatorioDasTemperaturas(temperaturas) / quantidade;
+                    mediaNova = somatorioDasTemperaturas(temperaturasNovas) / quantidade;
+                    System.out.println("A média das temperaturas em Kelvin é: " + mediaAntiga);
+                    System.out.println("A média das temperaturas em Celsius é: " + mediaNova);
                 }
-                mediaAntiga = somatorioDasTemperaturas(temperaturas)/quantidade;
-                mediaNova = somatorioDasTemperaturas(temperaturasNovas)/quantidade;
-                System.out.println("A média das temperaturas em Kelvin é: "+mediaAntiga);
-                System.out.println("A média das temperaturas em Celsius é: "+mediaNova);
-            }
-            case 6 ->{
-                for (int i = 0; i < quantidade; i++) {
+                case 6 -> {
+                    for (int i = 0; i < quantidade; i++) {
 
-                    System.out.print("Digite a temperatura " + (i + 1) + " : ");
-                    temperaturas[i] = conversao.nextDouble();
-                    converteTemperatura = kelvinParaFahrenheit(temperaturas[i]);
-                    temperaturasNovas[i] = converteTemperatura;
-                    System.out.println("A temperatura de " + temperaturas[i] + "K transformada para Fahrenheit é : " + converteTemperatura + "°F");
-                }
-                mediaAntiga = somatorioDasTemperaturas(temperaturas)/quantidade;
-                mediaNova = somatorioDasTemperaturas(temperaturasNovas)/quantidade;
-                System.out.println("A média das temperaturas em Kelvin é: "+mediaAntiga);
-                System.out.println("A média das temperaturas em Fahrenheit é: "+mediaNova);
+                        System.out.print("Digite a temperatura " + (i + 1) + " : ");
+                        temperaturas[i] = conversao.nextDouble();
+                        converteTemperatura = kelvinParaFahrenheit(temperaturas[i]);
+                        temperaturasNovas[i] = converteTemperatura;
+                        System.out.println("A temperatura de " + temperaturas[i] + "K transformada para Fahrenheit é : " + converteTemperatura + "°F");
+                    }
+                    mediaAntiga = somatorioDasTemperaturas(temperaturas) / quantidade;
+                    mediaNova = somatorioDasTemperaturas(temperaturasNovas) / quantidade;
+                    System.out.println("A média das temperaturas em Kelvin é: " + mediaAntiga);
+                    System.out.println("A média das temperaturas em Fahrenheit é: " + mediaNova);
 
+                }
+                case 7 -> {
+                    for (int i = 0; i < quantidade; i++) {
+
+                        System.out.print("Digite a temperatura " + (i + 1) + " : ");
+                        temperaturas[i] = conversao.nextDouble();
+                        converteTemperatura = celsiusParaCelsius(temperaturas[i]);
+                        temperaturasNovas[i] = converteTemperatura;
+                        System.out.println("Como a conversão da temperatura é para mesma unidade sua é temperatura " + temperaturas[i] + "°C");
+                    }
+                    media = somatorioDasTemperaturas(temperaturas) / quantidade;
+                    mediaNova = somatorioDasTemperaturas(temperaturasNovas) / quantidade;
+                    System.out.println("A média das temperaturas é: " + media);
+
+                }
+                case 8 -> {
+                    for (int i = 0; i < quantidade; i++) {
+
+                        System.out.print("Digite a temperatura " + (i + 1) + " : ");
+                        temperaturas[i] = conversao.nextDouble();
+                        converteTemperatura = fahrenheitParaFahrenheit(temperaturas[i]);
+                        temperaturasNovas[i] = converteTemperatura;
+                        System.out.println("Como a conversão da temperatura é para mesma unidade sua é temperatura " + temperaturas[i] + "°F");
+                    }
+                    media = somatorioDasTemperaturas(temperaturas) / quantidade;
+                    System.out.println("A média das temperaturas é: " + media);
+
+                }
+                case 9 -> {
+                    for (int i = 0; i < quantidade; i++) {
+
+                        System.out.print("Digite a temperatura " + (i + 1) + " : ");
+                        temperaturas[i] = conversao.nextDouble();
+                        converteTemperatura = kelvinParaKelvin(temperaturas[i]);
+                        temperaturasNovas[i] = converteTemperatura;
+                        System.out.println("Como a conversão da temperatura é para mesma unidade sua é temperatura " + temperaturas[i] + "K");
+                    }
+                    media = somatorioDasTemperaturas(temperaturas) / quantidade;
+                    System.out.println("A média das temperaturas é: " + media);
+
+                }
+                default -> System.out.println("Opção inválida, tente novamente.");
             }
-            default -> System.out.println("Opção inválida, tente novamente.");
+        }catch (Exception e){
+            System.out.println("Algo de errado não está certo! Tentar novamente!");
         }
+        finally {
+            System.out.println("Finalizando o programa...");
+        }
+
 
     }
 
